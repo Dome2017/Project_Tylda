@@ -46,6 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="views\gameViews\characterCreator\characterCreator.cs" />
+    <Compile Include="views\gameViews\enemyChose\enemyChose.cs" />
     <Compile Include="views\gameViews\gameView.cs" />
   </ItemGroup>
   <ItemGroup>
