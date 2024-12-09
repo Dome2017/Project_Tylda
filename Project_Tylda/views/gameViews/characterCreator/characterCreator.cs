@@ -33,7 +33,7 @@ namespace Project_Tylda
             Console.Write("Nadaj imię swojej postaci: ");
             string PlayerCharacterName = Console.ReadLine();
             Character PlayerCharacter = new Character(PlayerCharacterName, 100, 10, 20);
-            Console.WriteLine("\n" + PlayerCharacter.Name + "zmienna: " + PlayerCharacterName);
+            /*Console.WriteLine("\n" + PlayerCharacter.Name + "zmienna: " + PlayerCharacterName);*/
             ViewInformation(PlayerCharacter);
         }
         public static void ViewInformation(Character characterToShow)
