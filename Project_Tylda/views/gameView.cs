@@ -1,5 +1,4 @@
-﻿using Project_Tylda.views.gameViews.enemyChose;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,8 +11,8 @@ namespace Project_Tylda
         public static void StartGame()
         {
             Console.Clear();
-            CharacterCreator.CharacterChose();
-            enemiesToChose.ChooseEnemy();
+            CharacterCreator.ChooseCharacter();
+            EnemiesCreator.ChooseEnemy();
         }
     }
 }

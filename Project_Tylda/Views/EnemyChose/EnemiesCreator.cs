@@ -20,12 +20,12 @@ namespace Project_Tylda
                 {
                     case "1":
                         var enemyCharacterLvLEasy = new EnemyCharacter("Zbir", 20, 2, 5);
-                        ShowEnemyInformation(enemyCharacterLvLEasy);
+                        ShowEnemyParameters(enemyCharacterLvLEasy);
                         doShowEnemyMenu = false;
                         break;
                     case "2":
                         var enemyCharacterLvLMedium = new EnemyCharacter("Łotr", 50, 10, 12);
-                        ShowEnemyInformation(enemyCharacterLvLMedium);
+                        ShowEnemyParameters(enemyCharacterLvLMedium);
                         doShowEnemyMenu = false;
                         break;
                     default:
@@ -34,7 +34,7 @@ namespace Project_Tylda
                 }
             }
         }
-        public static void ShowEnemyInformation(EnemyCharacter enemyParameters)
+        public static void ShowEnemyParameters(EnemyCharacter enemyParameters)
         {
             Console.WriteLine("Name: " + enemyParameters.Name);
             Console.WriteLine("Hp: " + enemyParameters.Hp);

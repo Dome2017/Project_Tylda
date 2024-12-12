@@ -10,15 +10,17 @@ namespace Project_Tylda
 {
     public class CharacterCreator
     {
-        public static void CharacterChose()
+        public static PlayerCharacter playerCharacter;
+        public static void ChooseCharacter()
         {
             Console.WriteLine("=== Wybór Postaci ===\n\n");
             Console.Write("Nadaj imię swojej postaci: ");
-            string PlayerCharacterName = Console.ReadLine();
-            var PlayerCharacter = new PlayerCharacter(PlayerCharacterName, 100, 10, 20);
-            ViewInformation(PlayerCharacter);
+            string playerCharacterName = Console.ReadLine();
+            playerCharacter = new PlayerCharacter(playerCharacterName, 100, 10, 20);
+            ShowPlayerCharacterParameters(playerCharacter);
         }
-        private static void ViewInformation(PlayerCharacter characterToShow)
+
+        public static void ShowPlayerCharacterParameters(PlayerCharacter characterToShow)
         {
             Console.WriteLine("Name: " + characterToShow.Name);
             Console.WriteLine("Hp: " + characterToShow.Hp);
