@@ -48,6 +48,7 @@
     <Compile Include="views\gameViews\characterCreator\characterCreator.cs" />
     <Compile Include="views\gameViews\enemyChose\enemyChose.cs" />
     <Compile Include="views\gameViews\gameView.cs" />
+    <Compile Include="views\mainMenu\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

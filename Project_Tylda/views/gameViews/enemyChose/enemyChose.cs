@@ -49,8 +49,6 @@ namespace Project_Tylda.views.gameViews.enemyChose
                 }
                 
             }
-
-            
         }
         public static void ViewEnemyInformation(Enemy EnemyInfoShow)
         {
