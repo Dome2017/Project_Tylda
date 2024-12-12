@@ -15,10 +15,10 @@ namespace Project_Tylda
             Console.WriteLine("=== Wybór Postaci ===\n\n");
             Console.Write("Nadaj imię swojej postaci: ");
             string PlayerCharacterName = Console.ReadLine();
-            var PlayerCharacter = new Character(PlayerCharacterName, 100, 10, 20);
+            var PlayerCharacter = new PlayerCharacter(PlayerCharacterName, 100, 10, 20);
             ViewInformation(PlayerCharacter);
         }
-        private static void ViewInformation(Character characterToShow)
+        private static void ViewInformation(PlayerCharacter characterToShow)
         {
             Console.WriteLine("Name: " + characterToShow.Name);
             Console.WriteLine("Hp: " + characterToShow.Hp);
