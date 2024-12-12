@@ -25,7 +25,7 @@ namespace Project_Tylda
         }
 
     }
-    public class characterCreator
+    public class CharacterCreator
     {
         public static void CharacterChose()
         {

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Project_Tylda
 {
-    internal class gameView
+    internal class GameView
     {
         public static void StartGame()
         {
             Console.Clear();
-            characterCreator.CharacterChose();
+            CharacterCreator.CharacterChose();
             enemiesToChose.ChoseEnemy();
         }
     }
