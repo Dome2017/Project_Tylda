@@ -21,9 +21,7 @@ namespace Project_Tylda
             this.Hp = hp;
             this.Defense = defense;
             this.Attack = attack;
-            
         }
-
     }
     public class CharacterCreator
     {
@@ -32,11 +30,10 @@ namespace Project_Tylda
             Console.WriteLine("=== Wybór Postaci ===\n\n");
             Console.Write("Nadaj imię swojej postaci: ");
             string PlayerCharacterName = Console.ReadLine();
-            Character PlayerCharacter = new Character(PlayerCharacterName, 100, 10, 20);
-            /*Console.WriteLine("\n" + PlayerCharacter.Name + "zmienna: " + PlayerCharacterName);*/
+            var PlayerCharacter = new Character(PlayerCharacterName, 100, 10, 20);
             ViewInformation(PlayerCharacter);
         }
-        public static void ViewInformation(Character characterToShow)
+        private static void ViewInformation(Character characterToShow)
         {
             Console.WriteLine("Name: " + characterToShow.Name);
             Console.WriteLine("Hp: " + characterToShow.Hp);

@@ -18,7 +18,7 @@ namespace Project_Tylda
                 switch (player_choice)
                 {
                     case "1":
-                        gameView.StartGame();
+                        GameView.StartGame();
                         break;
                     case "2":
                         program_running = false;
