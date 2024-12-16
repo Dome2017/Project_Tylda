@@ -12,7 +12,8 @@ namespace Project_Tylda
         public static void ActionMenu()
         {
             Console.WriteLine("===Walka===\n\n");
-            Console.WriteLine($"|  {PlayerCharacterCreator.playerCharacter.Name} = {PlayerCharacterCreator.playerCharacter.Hp}  |====|  {EnemiesCreator.enemyCharacter.Name} = {EnemiesCreator.enemyCharacter.Hp}  |");
+            Console.WriteLine($"|  {PlayerCharacterCreator.playerCharacter.Name} = {PlayerCharacterCreator.playerCharacter.Hp}  |====|  {EnemiesCreator.enemyCharacter.Name} = {EnemiesCreator.enemyCharacter.Hp}  |\n\n");
+            CombatMenu.CombatActions();
         }
     }
     
