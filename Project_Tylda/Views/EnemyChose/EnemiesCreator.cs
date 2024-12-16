@@ -34,7 +34,6 @@ namespace Project_Tylda
                         Console.WriteLine("Nie istnieje taka opcja \nWybierz interesujący Cię element menu");
                         continue;
                 }
-                break;
             }
             Console.WriteLine("\nKliknij dowolny przycisk żeby przejść dalej\n");
             Console.ReadKey(true);
