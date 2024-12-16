@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Project_Tylda
 {
-    public class PlayerCharacter
+    public class Character
     {
         public string Name { get; set; }
         public int Hp { get; set; }
         public int Defense { get; set; }
         public int Attack { get; set; }
-        public PlayerCharacter(string name, int hp, int defense, int attack)
+        public Character(string name, int hp, int defense, int attack)
         {
             this.Name = name;
             this.Hp = hp;

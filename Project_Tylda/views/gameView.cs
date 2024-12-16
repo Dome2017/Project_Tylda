@@ -11,7 +11,7 @@ namespace Project_Tylda
         public static void StartGame()
         {
             Console.Clear();
-            CharacterCreator.ChooseCharacter();
+            PlayerCharacterCreator.ChooseCharacter();
             EnemiesCreator.ChooseEnemy();
         }
     }

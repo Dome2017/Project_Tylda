@@ -8,19 +8,19 @@ using System.Xml.Linq;
 
 namespace Project_Tylda
 {
-    public class CharacterCreator
+    public class PlayerCharacterCreator
     {
-        public static PlayerCharacter playerCharacter;
+        public static Character playerCharacter;
         public static void ChooseCharacter()
         {
             Console.WriteLine("=== Wybór Postaci ===\n\n");
             Console.Write("Nadaj imię swojej postaci: ");
             string playerCharacterName = Console.ReadLine();
-            playerCharacter = new PlayerCharacter(playerCharacterName, 100, 10, 20);
+            playerCharacter = new Character(playerCharacterName, 100, 10, 20);
             ShowPlayerCharacterParameters(playerCharacter);
         }
 
-        public static void ShowPlayerCharacterParameters(PlayerCharacter characterToShow)
+        public static void ShowPlayerCharacterParameters(Character characterToShow)
         {
             Console.WriteLine("Name: " + characterToShow.Name);
             Console.WriteLine("Hp: " + characterToShow.Hp);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Project_Tylda
 {    
     public class EnemiesCreator
@@ -19,12 +20,12 @@ namespace Project_Tylda
                 switch (enemyChoose)
                 {
                     case "1":
-                        var enemyCharacterLvLEasy = new EnemyCharacter("Zbir", 20, 2, 5);
+                        var enemyCharacterLvLEasy = new Character("Zbir", 20, 2, 5);
                         ShowEnemyParameters(enemyCharacterLvLEasy);
                         doShowEnemyMenu = false;
                         break;
                     case "2":
-                        var enemyCharacterLvLMedium = new EnemyCharacter("Łotr", 50, 10, 12);
+                        var enemyCharacterLvLMedium = new Character("Łotr", 50, 10, 12);
                         ShowEnemyParameters(enemyCharacterLvLMedium);
                         doShowEnemyMenu = false;
                         break;
@@ -34,7 +35,7 @@ namespace Project_Tylda
                 }
             }
         }
-        public static void ShowEnemyParameters(EnemyCharacter enemyParameters)
+        public static void ShowEnemyParameters(Character enemyParameters)
         {
             Console.WriteLine("Name: " + enemyParameters.Name);
             Console.WriteLine("Hp: " + enemyParameters.Hp);
