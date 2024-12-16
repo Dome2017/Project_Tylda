@@ -14,7 +14,6 @@ namespace Project_Tylda
         {
             Console.WriteLine("\n\n===Wybór Przeciwnika===\n\n");
             bool doShowEnemyMenu = true;
-            enemyCharacter = new Character("",0,0,0);
             while (doShowEnemyMenu)
             {
                 Console.WriteLine("Wybierz przeciwnika\n1 - Zbir poziom łatwy\n2 - Łotr poziom średni");
