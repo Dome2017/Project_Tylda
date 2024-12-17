@@ -38,11 +38,7 @@ namespace Project_Tylda
                         continue;
                 }
             }
-            Console.WriteLine();
-            Console.WriteLine("#---------------------------------------------#");
-            Console.WriteLine("# Kliknij dowolny przycisk żeby przejść dalej #");
-            Console.WriteLine("#---------------------------------------------#");
-            Console.ReadKey(true);
+            Common.WaitForUserAction();
         }
         public static void ShowEnemyParameters(Character enemyParameters)
         {

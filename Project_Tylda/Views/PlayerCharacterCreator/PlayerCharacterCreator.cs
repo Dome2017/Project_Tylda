@@ -18,11 +18,7 @@ namespace Project_Tylda
             string playerCharacterName = Console.ReadLine();
             playerCharacter = new Character(playerCharacterName, 100, 10, 20);
             ShowPlayerCharacterParameters(playerCharacter);
-            Console.WriteLine();
-            Console.WriteLine("#---------------------------------------------#");
-            Console.WriteLine("# Kliknij dowolny przycisk żeby przejść dalej #");
-            Console.WriteLine("#---------------------------------------------#");
-            ConsoleKeyInfo key = Console.ReadKey();
+            Common.WaitForUserAction();
         }
 
         public static void ShowPlayerCharacterParameters(Character characterToShow)
