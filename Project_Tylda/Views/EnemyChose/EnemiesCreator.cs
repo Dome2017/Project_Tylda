@@ -12,11 +12,13 @@ namespace Project_Tylda
         public static Character enemyCharacter;
         public static void ChooseEnemy()
         {
-            Console.WriteLine("\n\n===Wybór Przeciwnika===\n\n");
+            Console.WriteLine("===Wybór Przeciwnika===\n\n");
             bool doShowEnemyMenu = true;
             while (doShowEnemyMenu)
             {
-                Console.WriteLine("Wybierz przeciwnika\n1 - Zbir poziom łatwy\n2 - Łotr poziom średni");
+                Console.WriteLine("Wybierz przeciwnika");
+                Console.WriteLine("1 - Zbir poziom łatwy");
+                Console.WriteLine("2 - Łotr poziom średni");
                 string enemyChoose = Console.ReadLine();
                 switch (enemyChoose)
                 {
@@ -31,11 +33,15 @@ namespace Project_Tylda
                         doShowEnemyMenu = false;
                         break;
                     default:
-                        Console.WriteLine("Nie istnieje taka opcja \nWybierz interesujący Cię element menu");
+                        Console.WriteLine("Nie istnieje taka opcja");
+                        Console.WriteLine("Wybierz interesujący Cię element menu");
                         continue;
                 }
             }
-            Console.WriteLine("\nKliknij dowolny przycisk żeby przejść dalej\n");
+            Console.WriteLine("\n");
+            Console.WriteLine("#---------------------------------------------#");
+            Console.WriteLine("# Kliknij dowolny przycisk żeby przejść dalej #");
+            Console.WriteLine("#---------------------------------------------#");
             Console.ReadKey(true);
         }
         public static void ShowEnemyParameters(Character enemyParameters)

@@ -10,7 +10,9 @@ namespace Project_Tylda
     {
         public static void ShowMainMenu()
         {
-            Console.WriteLine("=== MENU === \n Nowa gra - 1 \n Wyjście - 2");
+            Console.WriteLine("+=== MENU ===+");
+            Console.WriteLine("1 - Nowa gra");
+            Console.WriteLine("2 - Wyjście");
             bool program_running = true;
             while (program_running == true)
             {
@@ -24,7 +26,8 @@ namespace Project_Tylda
                         program_running = false;
                         break;
                     default:
-                        Console.WriteLine("Nie istnieje taka opcja \nWybierz interesujący Cię element menu");
+                        Console.WriteLine("Nie istnieje taka opcja");
+                        Console.WriteLine("Wybierz interesujący Cię element menu");
                         continue;
                 }
             }

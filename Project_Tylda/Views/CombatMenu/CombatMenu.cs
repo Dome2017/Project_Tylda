@@ -10,7 +10,13 @@ namespace Project_Tylda
     {
         public static void CombatActions()
         {
-            Console.WriteLine("Akcje walki:\n1 - Atak mieczem\n2 - Atak specjalny\n3 - Unik\n4 - Obrona\n5 - Mikstura zdrowia");
+            Console.WriteLine("Akcje walki:");
+            Console.WriteLine("1 - Atak mieczem");
+            Console.WriteLine("2 - Atak specjalny");
+            Console.WriteLine("3 - Unik");
+            Console.WriteLine("4 - Obrona");
+            Console.WriteLine("5 - Mikstura zdrowia");
+            Console.Write("\n Wybierz akcję: ");
         }
     }
 }

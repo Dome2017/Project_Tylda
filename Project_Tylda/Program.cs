@@ -12,7 +12,10 @@ namespace Project_Tylda
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Witaj w Project Tylda");
+            Console.WriteLine("#########################");
+            Console.WriteLine("# Witaj w Project Tylda #");
+            Console.WriteLine("#########################");
+            Console.WriteLine("\n");
             MainMenu.ShowMainMenu();
         }
         
