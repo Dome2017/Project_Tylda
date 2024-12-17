@@ -15,7 +15,7 @@ namespace Project_Tylda
             Console.Clear();
             EnemiesCharacterCreator.ChooseEnemy();
             Console.Clear();
-            BatlleView.ActionMenu();
+            BattleView.ActionMenu();
         }
     }
 }

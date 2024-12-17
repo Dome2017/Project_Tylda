@@ -48,7 +48,7 @@
     <Compile Include="Models\Character.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Modules\Combat\BatlleView.cs" />
+    <Compile Include="Modules\Combat\BattleView.cs" />
     <Compile Include="Views\PlayerCharacterCreator\PlayerCharacterCreator.cs" />
     <Compile Include="Views\EnemiesCharacterCreator\EnemiesCharacterCreator.cs" />
     <Compile Include="Views\GameView.cs" />

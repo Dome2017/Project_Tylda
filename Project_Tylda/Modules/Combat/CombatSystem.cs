@@ -30,7 +30,7 @@ namespace Project_Tylda
                         DefensiveStance();
                         break;
                     case "5":
-                        HelathPotion();
+                        HealthPotion();
                         break;
                     default:
                         Console.WriteLine("Nie istnieje taka opcja");
@@ -75,10 +75,11 @@ namespace Project_Tylda
         {
             PlayerCharacterCreator.playerCharacter.Defense = PlayerCharacterCreator.playerCharacter.Defense * 2;
         }
-        public static void HelathPotion()
+        public static void HealthPotion()
         {
             PlayerCharacterCreator.playerCharacter.Hp += 20;
         }
+
 
     }
 }
