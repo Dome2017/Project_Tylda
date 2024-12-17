@@ -13,6 +13,7 @@ namespace Project_Tylda
         public static Character playerCharacter;
         public static void ChooseCharacter()
         {
+            Console.Clear();
             Console.WriteLine("=== Wybór Postaci ===\n\n");
             Console.Write("Nadaj imię swojej postaci: ");
             string playerCharacterName = Console.ReadLine();

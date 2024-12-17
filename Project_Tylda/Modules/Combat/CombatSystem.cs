@@ -37,25 +37,25 @@ namespace Project_Tylda
                         Console.WriteLine("Wybierz interesujący Cię element menu");
                         continue;
                 }
-                if (EnemiesCreator.enemyCharacter.Hp <= 0)
+                if (EnemiesCharacterCreator.enemyCharacter.Hp <= 0)
                 {
                     Console.WriteLine($"{PlayerCharacterCreator.playerCharacter.Name} wygrywa walkę");
                     inFight = false;
                 }
                 else if (PlayerCharacterCreator.playerCharacter.Hp <= 0)
                 {
-                    Console.WriteLine($"{EnemiesCreator.enemyCharacter.Name} wygrywa walkę");
+                    Console.WriteLine($"{EnemiesCharacterCreator.enemyCharacter.Name} wygrywa walkę");
                     inFight = false;
                 }
             }
         }
         public static void SwordCut()
         {
-            EnemiesCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack - EnemiesCreator.enemyCharacter.Defense - EnemiesCreator.enemyCharacter.Hp;
+            EnemiesCharacterCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack - EnemiesCharacterCreator.enemyCharacter.Defense - EnemiesCharacterCreator.enemyCharacter.Hp;
         }
         public static void SpecialAttack()
         {
-            EnemiesCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack * 2 - EnemiesCreator.enemyCharacter.Defense - EnemiesCreator.enemyCharacter.Hp;
+            EnemiesCharacterCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack * 2 - EnemiesCharacterCreator.enemyCharacter.Defense - EnemiesCharacterCreator.enemyCharacter.Hp;
             PlayerCharacterCreator.playerCharacter.Hp = PlayerCharacterCreator.playerCharacter.Hp - 15;
         }
         public static void DodgeAttack()

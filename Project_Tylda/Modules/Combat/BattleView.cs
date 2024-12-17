@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Project_Tylda
 {
-    public class BatlleView
+    public class BattleView
     {
         public static void ActionMenu()
         {
-            Console.WriteLine($"Rozpoczyna się walka międzi {PlayerCharacterCreator.playerCharacter.Name} a {EnemiesCreator.enemyCharacter.Name}\n\n");
+            Console.Clear();
+            Console.WriteLine($"Rozpoczyna się walka międzi {PlayerCharacterCreator.playerCharacter.Name} a {EnemiesCharacterCreator.enemyCharacter.Name}\n\n");
             Console.Write($"|  {PlayerCharacterCreator.playerCharacter.Name}: HP = {PlayerCharacterCreator.playerCharacter.Hp}");
             Console.Write("  |====|  ");
-            Console.Write($"{EnemiesCreator.enemyCharacter.Name}: HP = {EnemiesCreator.enemyCharacter.Hp}  |\n\n");
+            Console.Write($"{EnemiesCharacterCreator.enemyCharacter.Name}: HP = {EnemiesCharacterCreator.enemyCharacter.Hp}  |\n\n");
             CombatMenu.CombatActions();
         }
     }

@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Project_Tylda
 {    
-    public class EnemiesCreator
+    public class EnemiesCharacterCreator
     {
         public static Character enemyCharacter;
         public static void ChooseEnemy()
         {
+            Console.Clear();
             Console.WriteLine("===Wybór Przeciwnika===\n\n");
             bool doShowEnemyMenu = true;
             while (doShowEnemyMenu)
