@@ -38,7 +38,7 @@ namespace Project_Tylda
                         continue;
                 }
             }
-            Console.WriteLine("\n");
+            Console.WriteLine();
             Console.WriteLine("#---------------------------------------------#");
             Console.WriteLine("# Kliknij dowolny przycisk żeby przejść dalej #");
             Console.WriteLine("#---------------------------------------------#");

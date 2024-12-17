@@ -15,7 +15,7 @@ namespace Project_Tylda
             Console.WriteLine("#########################");
             Console.WriteLine("# Witaj w Project Tylda #");
             Console.WriteLine("#########################");
-            Console.WriteLine("\n");
+            Console.WriteLine();
             MainMenu.ShowMainMenu();
         }
         
