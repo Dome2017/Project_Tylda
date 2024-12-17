@@ -21,11 +21,10 @@ namespace Project_Tylda
                         SwordCut();
                         break;
                     case "2":
-                        EnemiesCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack * 2 - EnemiesCreator.enemyCharacter.Defense - EnemiesCreator.enemyCharacter.Hp;
-                        PlayerCharacterCreator.playerCharacter.Hp = PlayerCharacterCreator.playerCharacter.Hp - 15;
+                        SpecialAttack();
                         break;
                     case "3":
-                        int dodgeChance = random.Next(1, 11);
+                        DodgeAttack();
                         break;
                     case "4":
 
@@ -54,5 +53,24 @@ namespace Project_Tylda
         {
             EnemiesCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack - EnemiesCreator.enemyCharacter.Defense - EnemiesCreator.enemyCharacter.Hp;
         }
+        public static void SpecialAttack()
+        {
+            EnemiesCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack * 2 - EnemiesCreator.enemyCharacter.Defense - EnemiesCreator.enemyCharacter.Hp;
+            PlayerCharacterCreator.playerCharacter.Hp = PlayerCharacterCreator.playerCharacter.Hp - 15;
+        }
+        public static void DodgeAttack()
+        {
+            int dodgeChance = random.Next(1, 11);
+            if (dodgeChance <= 5)
+            {
+                Console.WriteLine($"{PlayerCharacterCreator.playerCharacter.Name} wykonuje udany unik");
+            }
+            else if (dodgeChance > 5)
+            {
+                Console.WriteLine($"{PlayerCharacterCreator.playerCharacter.Name} nie udje się wykonać uniku");
+                //NPC attack here
+            }
+        }
+
     }
 }
