@@ -13,7 +13,7 @@ namespace Project_Tylda
             Console.Clear();
             PlayerCharacterCreator.ChooseCharacter();
             Console.Clear();
-            EnemiesCreator.ChooseEnemy();
+            EnemiesCharacterCreator.ChooseEnemy();
             Console.Clear();
             BatlleView.ActionMenu();
         }
