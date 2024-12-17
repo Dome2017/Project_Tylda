@@ -27,7 +27,7 @@ namespace Project_Tylda
                         DodgeAttack();
                         break;
                     case "4":
-
+                        DefensiveStance();
                         break;
                     case "5":
 
@@ -70,6 +70,10 @@ namespace Project_Tylda
                 Console.WriteLine($"{PlayerCharacterCreator.playerCharacter.Name} nie udje się wykonać uniku");
                 //NPC attack here
             }
+        }
+        public static void DefensiveStance()
+        {
+            PlayerCharacterCreator.playerCharacter.Defense = PlayerCharacterCreator.playerCharacter.Defense * 2;
         }
 
     }
