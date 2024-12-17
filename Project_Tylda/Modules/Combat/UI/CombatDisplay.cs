@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Project_Tylda
 {
-    public class CombatMenu
+    public class CombatDisplay
     {
-        public static void CombatActions()
+        public static void ActionMenu()
         {
             Console.WriteLine("Akcje walki:");
             Console.WriteLine("1 - Atak mieczem");

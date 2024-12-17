@@ -15,7 +15,7 @@ namespace Project_Tylda
             Console.Write($"|  {PlayerCharacterCreator.playerCharacter.Name}: HP = {PlayerCharacterCreator.playerCharacter.Hp}");
             Console.Write("  |====|  ");
             Console.Write($"{EnemiesCharacterCreator.enemyCharacter.Name}: HP = {EnemiesCharacterCreator.enemyCharacter.Hp}  |\n\n");
-            CombatMenu.CombatActions();
+            CombatDisplay.ActionMenu();
         }
     }
     

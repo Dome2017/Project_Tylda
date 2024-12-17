@@ -18,7 +18,7 @@ namespace Project_Tylda
                 switch (playerAction)
                 {
                     case "1":
-                        SwordCut();
+                        /*SwordCut.Execute(player);*/
                         break;
                     case "2":
                         SpecialAttack();
@@ -49,10 +49,7 @@ namespace Project_Tylda
                 }
             }
         }
-        public static void SwordCut()
-        {
-            EnemiesCharacterCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack - EnemiesCharacterCreator.enemyCharacter.Defense - EnemiesCharacterCreator.enemyCharacter.Hp;
-        }
+       
         public static void SpecialAttack()
         {
             EnemiesCharacterCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack * 2 - EnemiesCharacterCreator.enemyCharacter.Defense - EnemiesCharacterCreator.enemyCharacter.Hp;
