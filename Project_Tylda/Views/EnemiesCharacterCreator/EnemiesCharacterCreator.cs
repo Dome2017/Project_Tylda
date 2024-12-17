@@ -10,7 +10,7 @@ namespace Project_Tylda
     public class EnemiesCharacterCreator
     {
         public static Character enemyCharacter;
-        public static void ChooseEnemy()
+        public static Character ChooseEnemy()
         {
             Console.Clear();
             Console.WriteLine("===Wybór Przeciwnika===\n\n");
@@ -40,6 +40,7 @@ namespace Project_Tylda
                 }
             }
             Common.WaitForUserAction();
+            return enemyCharacter;
         }
         public static void ShowEnemyParameters(Character enemyParameters)
         {
