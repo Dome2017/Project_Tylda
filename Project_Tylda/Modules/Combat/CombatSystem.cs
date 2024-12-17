@@ -18,7 +18,7 @@ namespace Project_Tylda
                 switch (playerAction)
                 {
                     case "1":
-                        EnemiesCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack - EnemiesCreator.enemyCharacter.Defense - EnemiesCreator.enemyCharacter.Hp;
+                        SwordCut();
                         break;
                     case "2":
                         EnemiesCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack * 2 - EnemiesCreator.enemyCharacter.Defense - EnemiesCreator.enemyCharacter.Hp;
@@ -50,9 +50,9 @@ namespace Project_Tylda
                 }
             }
         }
-        public static void NpcAction()
+        public static void SwordCut()
         {
-
+            EnemiesCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack - EnemiesCreator.enemyCharacter.Defense - EnemiesCreator.enemyCharacter.Hp;
         }
     }
 }
