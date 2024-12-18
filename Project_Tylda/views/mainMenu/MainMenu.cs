@@ -28,6 +28,8 @@ namespace Project_Tylda
                     default:
                         Console.WriteLine("Nie istnieje taka opcja");
                         Console.WriteLine("Wybierz interesujący Cię element menu");
+                        Console.WriteLine("1 - Nowa gra");
+                        Console.WriteLine("2 - Wyjście");
                         continue;
                 }
             }
