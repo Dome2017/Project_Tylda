@@ -12,7 +12,6 @@ namespace Project_Tylda
         {
             var player = PlayerCharacterCreator.CreatePlayerCharacter();
             var enemy = EnemiesCharacterCreator.ChooseEnemy();
-            BattleView.ActionMenu();
             CombatSystem.BattleStart(player, enemy);
         }
     }

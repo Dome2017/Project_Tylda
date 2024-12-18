@@ -11,6 +11,15 @@ namespace Project_Tylda
         static Random random = new Random();
         public static void BattleStart(Character player, Character enemy)
         {
+            Character playerBaseStats = player;
+            Character enemyBaseStats = enemy;
+
+
+            Console.Clear();
+            CombatDisplay.ShowState(player, enemy);
+            CombatDisplay.ShowActionMenu();
+
+
             bool inFight = true;
             while (inFight)
             {
