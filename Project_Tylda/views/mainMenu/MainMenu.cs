@@ -14,7 +14,7 @@ namespace Project_Tylda
             Console.WriteLine("1 - Nowa gra");
             Console.WriteLine("2 - Wyjście");
             bool program_running = true;
-            while (program_running == true)
+            while (program_running)
             {
                 string player_choice = Console.ReadLine();
                 switch (player_choice)
@@ -28,6 +28,8 @@ namespace Project_Tylda
                     default:
                         Console.WriteLine("Nie istnieje taka opcja");
                         Console.WriteLine("Wybierz interesujący Cię element menu");
+                        Console.WriteLine("1 - Nowa gra");
+                        Console.WriteLine("2 - Wyjście");
                         continue;
                 }
             }

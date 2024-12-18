@@ -43,20 +43,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Combat\CombatSystem.cs" />
-    <Compile Include="Views\CombatMenu\CombatMenu.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Modules\Combat\Actions\DefensiveStance.cs" />
+    <Compile Include="Modules\Combat\Actions\DodgeAttack.cs" />
+    <Compile Include="Modules\Combat\Actions\HealthPotion.cs" />
+    <Compile Include="Modules\Combat\Actions\SpecialAttack.cs" />
+    <Compile Include="Modules\Combat\Actions\SwordCut.cs" />
+    <Compile Include="Modules\Combat\CombatSystem.cs" />
+    <Compile Include="Modules\Combat\States\CombatActionHandler.cs" />
+    <Compile Include="Modules\Combat\UI\CombatDisplay.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\BatlleView\BatlleView.cs" />
     <Compile Include="Views\PlayerCharacterCreator\PlayerCharacterCreator.cs" />
-    <Compile Include="Views\EnemyChose\EnemiesCreator.cs" />
+    <Compile Include="Views\EnemiesCharacterCreator\EnemiesCharacterCreator.cs" />
     <Compile Include="Views\GameView.cs" />
     <Compile Include="Views\MainMenu\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Modules\Combat\Logic\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

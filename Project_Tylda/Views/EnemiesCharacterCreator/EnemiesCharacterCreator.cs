@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace Project_Tylda
 {    
-    public class EnemiesCreator
+    public class EnemiesCharacterCreator
     {
         public static Character enemyCharacter;
-        public static void ChooseEnemy()
+        public static Character ChooseEnemy()
         {
+            Console.Clear();
             Console.WriteLine("===Wybór Przeciwnika===\n\n");
             bool doShowEnemyMenu = true;
             while (doShowEnemyMenu)
@@ -38,11 +39,8 @@ namespace Project_Tylda
                         continue;
                 }
             }
-            Console.WriteLine();
-            Console.WriteLine("#---------------------------------------------#");
-            Console.WriteLine("# Kliknij dowolny przycisk żeby przejść dalej #");
-            Console.WriteLine("#---------------------------------------------#");
-            Console.ReadKey(true);
+            Common.WaitForUserAction();
+            return enemyCharacter;
         }
         public static void ShowEnemyParameters(Character enemyParameters)
         {
