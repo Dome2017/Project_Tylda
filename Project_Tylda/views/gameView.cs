@@ -10,12 +10,9 @@ namespace Project_Tylda
     {
         public static void StartGame()
         {
-            Console.Clear();
-            PlayerCharacterCreator.ChooseCharacter();
-            Console.Clear();
-            EnemiesCreator.ChooseEnemy();
-            Console.Clear();
-            BatlleView.ActionMenu();
+            var player = PlayerCharacterCreator.CreatePlayerCharacter();
+            var enemy = EnemiesCharacterCreator.ChooseEnemy();
+            CombatSystem.BattleStart(player, enemy);
         }
     }
 }
