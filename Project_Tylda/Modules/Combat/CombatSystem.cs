@@ -14,49 +14,21 @@ namespace Project_Tylda
             Character playerBaseStats = player;
             Character enemyBaseStats = enemy;
 
-
-            Console.Clear();
-            CombatDisplay.ShowState(player, enemy);
-            CombatDisplay.ShowActionMenu();
-
-
-            bool inFight = true;
-            while (inFight)
+            while (player.Hp > 0 && enemy.Hp > 0)
             {
-                var playerAction = Console.ReadLine();
-                switch (playerAction)
+                Console.Clear();
+                CombatDisplay.ShowState(player, enemy);
+                CombatDisplay.ShowActionMenu();
+                CombatActionHandler.ExecutePlayerAction(player, enemy);
+                /*if (enemy.Hp > 0)
                 {
-                    case "1":
-                        SwordCut.Execute(player, enemy);
-                        break;
-                    case "2":
-                        SpecialAttack.Execute(player, enemy);
-                        break;
-                    case "3":
-                        DodgeAttack.Execute(player, enemy);
-                        break;
-                    case "4":
-                        DefensiveStance.Execute(player, enemy);
-                        break;
-                    case "5":
-                        HealthPotion.Execute(player, enemy);
-                        break;
-                    default:
-                        Console.WriteLine("Nie istnieje taka opcja");
-                        Console.WriteLine("Wybierz interesujący Cię element menu");
-                        continue;
-                }
-                if (EnemiesCharacterCreator.enemyCharacter.Hp <= 0)
-                {
-                    Console.WriteLine($"{PlayerCharacterCreator.playerCharacter.Name} wygrywa walkę");
-                    inFight = false;
-                }
-                else if (PlayerCharacterCreator.playerCharacter.Hp <= 0)
-                {
-                    Console.WriteLine($"{EnemiesCharacterCreator.enemyCharacter.Name} wygrywa walkę");
-                    inFight = false;
-                }
+                    CombatActionHandler.ExecuteEnemyAction(player, enemy);
+                }*/
+                CombatActionHandler.ExecuteEnemyAction(player, enemy);
+                CombatActionHandler.ResetDefence(playerBaseStats, player);
+                Common.WaitForUserAction();
             }
+            CombatDisplay.ShowBattleResult(player, enemy);
         }
     }
 }

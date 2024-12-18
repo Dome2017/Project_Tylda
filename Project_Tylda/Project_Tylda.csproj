@@ -50,6 +50,7 @@
     <Compile Include="Modules\Combat\Actions\SpecialAttack.cs" />
     <Compile Include="Modules\Combat\Actions\SwordCut.cs" />
     <Compile Include="Modules\Combat\CombatSystem.cs" />
+    <Compile Include="Modules\Combat\States\CombatActionHandler.cs" />
     <Compile Include="Modules\Combat\UI\CombatDisplay.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Program.cs" />
@@ -64,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Modules\Combat\Logic\" />
-    <Folder Include="Modules\Combat\States\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
