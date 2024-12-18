@@ -20,11 +20,10 @@ namespace Project_Tylda
                 CombatDisplay.ShowState(player, enemy);
                 CombatDisplay.ShowActionMenu();
                 CombatActionHandler.ExecutePlayerAction(player, enemy);
-                /*if (enemy.Hp > 0)
+                if (enemy.Hp > 0)
                 {
                     CombatActionHandler.ExecuteEnemyAction(player, enemy);
-                }*/
-                CombatActionHandler.ExecuteEnemyAction(player, enemy);
+                }
                 CombatActionHandler.ResetDefence(playerBaseStats, player);
                 Common.WaitForUserAction();
             }
