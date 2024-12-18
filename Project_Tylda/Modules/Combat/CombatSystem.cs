@@ -9,7 +9,7 @@ namespace Project_Tylda
     public class CombatSystem
     {
         static Random random = new Random();
-        public static void InFightAction()
+        public static void BattleStart(Character player, Character enemy)
         {
             bool inFight = true;
             while (inFight)
@@ -18,19 +18,19 @@ namespace Project_Tylda
                 switch (playerAction)
                 {
                     case "1":
-                        /*SwordCut.Execute(player);*/
+                        SwordCut.Execute(player, enemy);
                         break;
                     case "2":
-                        SpecialAttack();
+                        SpecialAttack.Execute(player, enemy);
                         break;
                     case "3":
-                        DodgeAttack();
+                        DodgeAttack.Execute(player, enemy);
                         break;
                     case "4":
-                        DefensiveStance();
+                        DefensiveStance.Execute(player, enemy);
                         break;
                     case "5":
-                        HealthPotion();
+                        HealthPotion.Execute(player, enemy);
                         break;
                     default:
                         Console.WriteLine("Nie istnieje taka opcja");
@@ -49,34 +49,5 @@ namespace Project_Tylda
                 }
             }
         }
-       
-        public static void SpecialAttack()
-        {
-            EnemiesCharacterCreator.enemyCharacter.Hp = PlayerCharacterCreator.playerCharacter.Attack * 2 - EnemiesCharacterCreator.enemyCharacter.Defense - EnemiesCharacterCreator.enemyCharacter.Hp;
-            PlayerCharacterCreator.playerCharacter.Hp = PlayerCharacterCreator.playerCharacter.Hp - 15;
-        }
-        public static void DodgeAttack()
-        {
-            int dodgeChance = random.Next(1, 11);
-            if (dodgeChance <= 5)
-            {
-                Console.WriteLine($"{PlayerCharacterCreator.playerCharacter.Name} wykonuje udany unik");
-            }
-            else if (dodgeChance > 5)
-            {
-                Console.WriteLine($"{PlayerCharacterCreator.playerCharacter.Name} nie udje się wykonać uniku");
-                //NPC attack here
-            }
-        }
-        public static void DefensiveStance()
-        {
-            PlayerCharacterCreator.playerCharacter.Defense = PlayerCharacterCreator.playerCharacter.Defense * 2;
-        }
-        public static void HealthPotion()
-        {
-            PlayerCharacterCreator.playerCharacter.Hp += 20;
-        }
-
-
     }
 }

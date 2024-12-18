@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Project_Tylda
 {
-    public class SwordCut
+    public class SpecialAttack
     {
         public static void Execute(Character player, Character enemy)
         {
-            int damage = player.Attack - enemy.Defense;
+            int damage = (player.Attack * 2) - enemy.Defense;
             damage = Math.Max(damage, 0);
             enemy.Hp = enemy.Hp - damage;
-            Console.WriteLine($"- {player.Name} atakuje mieczem");
-            Console.WriteLine($"- {enemy.Name} otrzymał {damage} pkt obrażeń");
+            player.Hp = player.Hp - 15;
+            Console.WriteLine($"- {player.Name} wykonuje atak specjalny zadając {damage} i traci 15 pkt Hp");
+            Console.WriteLine($"- {enemy.Name} otrzymuje {damage} pkt obrażeń");
         }
     }
 }

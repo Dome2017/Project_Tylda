@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Common.cs" />
+    <Compile Include="Modules\Combat\Actions\DefensiveStance.cs" />
+    <Compile Include="Modules\Combat\Actions\DodgeAttack.cs" />
+    <Compile Include="Modules\Combat\Actions\HealthPotion.cs" />
+    <Compile Include="Modules\Combat\Actions\SpecialAttack.cs" />
     <Compile Include="Modules\Combat\Actions\SwordCut.cs" />
     <Compile Include="Modules\Combat\CombatSystem.cs" />
     <Compile Include="Modules\Combat\UI\CombatDisplay.cs" />
