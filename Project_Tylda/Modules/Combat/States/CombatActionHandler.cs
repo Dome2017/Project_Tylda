@@ -8,10 +8,11 @@ namespace Project_Tylda
 {
     public class CombatActionHandler
     {
-        public static bool ifDodgeSuccess = false;  
+        public static bool ifPlayerDodgeSuccess = false;  
+        public static bool isEnemyDodgeSuccess = false;
         public static void ExecuteEnemyAction(Character player, Character enemy)
         {
-            if (ifDodgeSuccess == false)
+            if (ifPlayerDodgeSuccess == false)
             {
                 Console.WriteLine($"\n- {enemy.Name} kontratakuje!");
                 int damage = Math.Max(0, enemy.Attack - player.Defense);
@@ -21,6 +22,7 @@ namespace Project_Tylda
             else
             {
                Console.WriteLine($"- {enemy.Name} chybił atak");
+                ifPlayerDodgeSuccess = false;
             }
             
         }
@@ -32,13 +34,29 @@ namespace Project_Tylda
             switch (playerAction)
             {
                 case "1":
-                    SwordCut.Execute(player, enemy);
+                    if (isEnemyDodgeSuccess == true)
+                    {
+                        SwordCut.Execute(player, enemy);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"- {player.Name} chybił atak");
+                        isEnemyDodgeSuccess = false;
+                    }
                     break;
                 case "2":
-                    SpecialAttack.Execute(player, enemy);
+                    if (isEnemyDodgeSuccess == true)
+                    {
+                        SpecialAttack.Execute(player, enemy);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"- {player.Name} chybił atak");
+                        isEnemyDodgeSuccess = false;
+                    }
                     break;
                 case "3":
-                    ifDodgeSuccess = DodgeAttack.Execute(player, enemy);
+                    ifPlayerDodgeSuccess = DodgeAttack.Execute(player, enemy);
                     break;
                 case "4":
                     DefensiveStance.Execute(player, enemy);
