@@ -25,7 +25,7 @@ namespace Project_Tylda
                 switch (enemyChoose)
                 {
                     case "1":
-                        enemyCharacter = new Character("Zbir", 20, 2, 5);
+                        enemyCharacter = new Character("Zbir", 20, 2, 10);
                         ShowEnemyParameters(enemyCharacter);
                         doShowEnemyMenu = false;
                         break;
@@ -54,6 +54,7 @@ namespace Project_Tylda
             Console.WriteLine("Hp: " + enemyParameters.Hp);
             Console.WriteLine("Defense: " + enemyParameters.Defense);
             Console.WriteLine("Attack: " + enemyParameters.Attack);
+            Console.WriteLine("Level: " + enemyParameters.Level);
         }
     }
 }

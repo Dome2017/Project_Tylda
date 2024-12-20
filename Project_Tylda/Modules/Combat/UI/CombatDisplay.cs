@@ -26,9 +26,17 @@ namespace Project_Tylda
         public static void ShowBattleResult(Character player, Character enemy)
         {
             Console.WriteLine("");
-            Console.WriteLine(player.Hp > 0
-                ? $"{player.Name} wygrywa walkę!"
-                : $"{enemy.Name} wygrywa walkę.");
+            
+            if(player.Hp > 0)
+            {
+                Console.WriteLine($"{player.Name} wygrywa walkę!");
+                Console.WriteLine("Otrzymujesz nagrody za wygraną walkę.");
+                CombatRewards.GrantRewards(player, enemy); // Wywołanie przyznawania nagród
+            }
+            else
+            {
+                Console.WriteLine($"{enemy.Name} wygrywa walkę.");
+            }
         }
     }
 }
