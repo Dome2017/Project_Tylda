@@ -11,8 +11,9 @@ namespace Project_Tylda
         static Random random = new Random();
         public static void BattleStart(Character player, Character enemy)
         {
-            Character playerBaseStats = player;
+            Character playerBaseStats = new Character(player);
             Character enemyBaseStats = enemy;
+
 
             while (player.Hp > 0 && enemy.Hp > 0)
             {
@@ -24,7 +25,10 @@ namespace Project_Tylda
                 {
                     CombatActionHandler.ExecuteEnemyAction(player, enemy);
                 }
-                CombatActionHandler.ResetDefence(playerBaseStats, player);
+                if (playerBaseStats.Defense != player.Defense)
+                {
+                    CombatActionHandler.ResetDefence(playerBaseStats, player);
+                }
                 Common.WaitForUserAction();
             }
             CombatDisplay.ShowBattleResult(player, enemy);
