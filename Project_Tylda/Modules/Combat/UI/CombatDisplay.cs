@@ -30,7 +30,8 @@ namespace Project_Tylda
             if(player.Hp > 0)
             {
                 Console.WriteLine($"{player.Name} wygrywa walkę!");
-                Console.WriteLine();
+                Console.WriteLine("Otrzymujesz nagrody za wygraną walkę.");
+                CombatRewards.GrantRewards(player, enemy); // Wywołanie przyznawania nagród
             }
             else
             {

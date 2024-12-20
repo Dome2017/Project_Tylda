@@ -33,6 +33,9 @@ namespace Project_Tylda
             Console.WriteLine("Hp: " + characterToShow.Hp);
             Console.WriteLine("Defense: " + characterToShow.Defense);
             Console.WriteLine("Attack: " + characterToShow.Attack);
+            Console.WriteLine("Level: " + characterToShow.Level);
+            Console.WriteLine("Gold: " + characterToShow.Gold);
+            Console.WriteLine("Experience: " + characterToShow.Experience);
         }
     }
 }

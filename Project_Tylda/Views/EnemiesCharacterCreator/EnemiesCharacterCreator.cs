@@ -48,6 +48,7 @@ namespace Project_Tylda
             Console.WriteLine("Hp: " + enemyParameters.Hp);
             Console.WriteLine("Defense: " + enemyParameters.Defense);
             Console.WriteLine("Attack: " + enemyParameters.Attack);
+            Console.WriteLine("Level: " + enemyParameters.Level);
         }
     }
 }
