@@ -29,6 +29,7 @@ namespace Project_Tylda
             Console.WriteLine("Experience: " + character.Experience);
             Console.WriteLine("Gold: " + character.Gold);
             Console.WriteLine("---------------------------------------------");
+            WaitForUserAction();
         }
     }
 }
