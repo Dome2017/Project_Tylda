@@ -18,7 +18,7 @@ namespace Project_Tylda
         public int Gold { get; set; } 
         public int Experience { get; set; }
         
-        public Character(string name, int hp, int defense, int attack, int? level)
+        public Character(string name, int hp, int defense, int attack, int? level = null)
         {
             this.Name = name;
             this.Hp = hp;
