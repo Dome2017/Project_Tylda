@@ -8,13 +8,13 @@ namespace Project_Tylda
 {
     public class SwordCut
     {
-        public static void Execute(Character player, Character enemy)
+        public static void Execute(Character attacker, Character defender)
         {
-            int damage = player.Attack - enemy.Defense;
+            int damage = attacker.Attack - defender.Defense;
             damage = Math.Max(damage, 0);
-            enemy.Hp = enemy.Hp - damage;
-            Console.WriteLine($"- {player.Name} atakuje mieczem");
-            Console.WriteLine($"- {enemy.Name} otrzymał {damage} pkt obrażeń");
+            defender.Hp = defender.Hp - damage;
+            Console.WriteLine($"- {attacker.Name} atakuje mieczem");
+            Console.WriteLine($"- {defender.Name} otrzymał {damage} pkt obrażeń");
         }
     }
 }
