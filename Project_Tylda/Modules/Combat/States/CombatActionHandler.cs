@@ -8,21 +8,43 @@ namespace Project_Tylda
 {
     public class CombatActionHandler
     {
-        public static bool ifDodgeSuccess = false;  
+        static Random random = new Random();
+        public static bool ifPlayerDodgeSuccess = false;  
+        public static bool ifEnemyDodgeSuccess = false;
+        public static int playerUsablePotionsLeft = 2;
+        public static int enemyUsablePotionsLeft = 2;
+
         public static void ExecuteEnemyAction(Character player, Character enemy)
         {
-            if (ifDodgeSuccess == false)
+            var enemyAction = random.Next(1, 6);
+            if (enemyUsablePotionsLeft == 0)
             {
-                Console.WriteLine($"\n- {enemy.Name} kontratakuje!");
-                int damage = Math.Max(0, enemy.Attack - player.Defense);
-                player.Hp -= damage;
-                Console.WriteLine($"- {player.Name} otrzymuje {damage} obrażeń.");
+                enemyAction = random.Next(1, 5);
             }
             else
             {
-               Console.WriteLine($"- {enemy.Name} chybił atak");
+
             }
-            
+            switch (enemyAction)
+            {
+                case 1:
+                    SwordCut.Execute(enemy, player, ifPlayerDodgeSuccess);
+                    break;
+                case 2:
+                    SpecialAttack.Execute(enemy, player, ifPlayerDodgeSuccess);
+                    break;
+                case 3:
+                    ifEnemyDodgeSuccess = DodgeAttack.Execute(enemy, player);
+                    break;
+                case 4:
+                    DefensiveStance.Execute(enemy, player);
+                    break;
+                case 5:
+                    HealthPotion.Execute(enemy, player);
+                    enemyUsablePotionsLeft = enemyUsablePotionsLeft - 1;
+                    break;
+            }
+            ifPlayerDodgeSuccess = false;
         }
         public static void ExecutePlayerAction(Character player, Character enemy)
         {
@@ -32,27 +54,40 @@ namespace Project_Tylda
             switch (playerAction)
             {
                 case "1":
-                    SwordCut.Execute(player, enemy);
+                        SwordCut.Execute(player, enemy, ifEnemyDodgeSuccess);
                     break;
                 case "2":
-                    SpecialAttack.Execute(player, enemy);
+                    SpecialAttack.Execute(player, enemy, ifEnemyDodgeSuccess);
                     break;
                 case "3":
-                    ifDodgeSuccess = DodgeAttack.Execute(player, enemy);
+                    ifPlayerDodgeSuccess = DodgeAttack.Execute(player, enemy);
                     break;
                 case "4":
                     DefensiveStance.Execute(player, enemy);
                     break;
                 case "5":
-                    HealthPotion.Execute(player, enemy);
-                    break;
+                    if (playerUsablePotionsLeft == 0)
+                    {
+                        Console.WriteLine("!!!Wykorzystano wszystkie eliksiry zdrowia, odsłoniłeś się na atak przeciwnika próbując znaleźć eliksir!!!");
+                        break;
+                    }
+                        HealthPotion.Execute(player, enemy);
+                    playerUsablePotionsLeft = playerUsablePotionsLeft - 1;
+                    if (playerUsablePotionsLeft == 0)
+                    {
+                        Console.WriteLine("!!!Nie masz już eliksirów życia, użycie elkisriru odsłoni cię na atak przeciwnika!!!");
+                    }
+                        break;
             }
-            
+            ifEnemyDodgeSuccess = false;
         }
         public static void ResetDefense(Character baseCharacter, Character characterInAction)
         {
-            characterInAction.Defense = baseCharacter.Defense;
-            Console.WriteLine($"przywrócono bazowy poziom pkt oborny ({characterInAction.Defense})");
+            if (characterInAction.Defense != baseCharacter.Defense)
+            {
+                characterInAction.Defense = baseCharacter.Defense;
+                Console.WriteLine($"{characterInAction.Name} ma przywrócony bazowy poziom pkt oborny ({characterInAction.Defense})");
+            }
         }
     }
 }
