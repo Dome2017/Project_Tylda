@@ -27,7 +27,7 @@ namespace Project_Tylda
                 }
                 if (playerBaseStats.Defense != player.Defense)
                 {
-                    CombatActionHandler.ResetDefence(playerBaseStats, player);
+                    CombatActionHandler.ResetDefense(playerBaseStats, player);
                 }
                 Common.WaitForUserAction();
             }

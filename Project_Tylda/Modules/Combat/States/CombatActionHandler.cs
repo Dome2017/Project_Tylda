@@ -49,7 +49,7 @@ namespace Project_Tylda
             }
             
         }
-        public static void ResetDefence(Character baseCharacter, Character characterInAction)
+        public static void ResetDefense(Character baseCharacter, Character characterInAction)
         {
             characterInAction.Defense = baseCharacter.Defense;
             Console.WriteLine($"przywrócono bazowy poziom pkt oborny ({characterInAction.Defense})");
