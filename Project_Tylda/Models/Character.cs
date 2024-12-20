@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Project_Tylda
 {
@@ -18,6 +20,13 @@ namespace Project_Tylda
             this.Hp = hp;
             this.Defense = defense;
             this.Attack = attack;
+        }
+        public Character(Character baseCharacter)
+        {
+            Name = baseCharacter.Name;
+            Hp = baseCharacter.Hp;
+            Defense = baseCharacter.Defense;
+            Attack = baseCharacter.Attack;
         }
     }
 }
