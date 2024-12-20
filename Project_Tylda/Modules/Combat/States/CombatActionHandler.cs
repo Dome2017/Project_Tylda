@@ -57,8 +57,7 @@ namespace Project_Tylda
                         SwordCut.Execute(player, enemy, ifEnemyDodgeSuccess);
                     break;
                 case "2":
-                    if (ifEnemyDodgeSuccess == true)
-                        SpecialAttack.Execute(player, enemy, ifEnemyDodgeSuccess);
+                    SpecialAttack.Execute(player, enemy, ifEnemyDodgeSuccess);
                     break;
                 case "3":
                     ifPlayerDodgeSuccess = DodgeAttack.Execute(player, enemy);

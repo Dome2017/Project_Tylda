@@ -20,6 +20,7 @@ namespace Project_Tylda
                 Console.WriteLine("Wybierz przeciwnika");
                 Console.WriteLine("1 - Zbir poziom łatwy");
                 Console.WriteLine("2 - Łotr poziom średni");
+                Console.WriteLine("3 - Dezerter poziom ciężki");
                 string enemyChoose = Console.ReadLine();
                 switch (enemyChoose)
                 {
@@ -30,6 +31,11 @@ namespace Project_Tylda
                         break;
                     case "2":
                         enemyCharacter = new Character("Łotr", 50, 10, 12);
+                        ShowEnemyParameters(enemyCharacter);
+                        doShowEnemyMenu = false;
+                        break;
+                    case "3":
+                        enemyCharacter = new Character("Dezerter", 100, 10, 20);
                         ShowEnemyParameters(enemyCharacter);
                         doShowEnemyMenu = false;
                         break;
