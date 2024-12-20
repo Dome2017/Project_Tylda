@@ -24,6 +24,7 @@ namespace Project_Tylda
                 CombatActionHandler.ResetDefense(enemyBaseStats, enemy);
                 if (enemy.Hp > 0)
                 {
+                    Console.WriteLine("***");
                     CombatActionHandler.ExecuteEnemyAction(player, enemy);
                 }
                 CombatActionHandler.ResetDefense(playerBaseStats, player);
