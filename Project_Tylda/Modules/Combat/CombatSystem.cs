@@ -12,7 +12,7 @@ namespace Project_Tylda
         public static void BattleStart(Character player, Character enemy)
         {
             Character playerBaseStats = new Character(player);
-            Character enemyBaseStats = enemy;
+            Character enemyBaseStats = new Character(enemy);
 
 
             while (player.Hp > 0 && enemy.Hp > 0)
@@ -21,14 +21,12 @@ namespace Project_Tylda
                 CombatDisplay.ShowState(player, enemy);
                 CombatDisplay.ShowActionMenu();
                 CombatActionHandler.ExecutePlayerAction(player, enemy);
+                CombatActionHandler.ResetDefense(enemyBaseStats, enemy);
                 if (enemy.Hp > 0)
                 {
                     CombatActionHandler.ExecuteEnemyAction(player, enemy);
                 }
-                if (playerBaseStats.Defense != player.Defense)
-                {
-                    CombatActionHandler.ResetDefense(playerBaseStats, player);
-                }
+                CombatActionHandler.ResetDefense(playerBaseStats, player);
                 Common.WaitForUserAction();
             }
             CombatDisplay.ShowBattleResult(player, enemy);

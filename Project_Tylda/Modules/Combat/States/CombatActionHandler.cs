@@ -8,23 +8,46 @@ namespace Project_Tylda
 {
     public class CombatActionHandler
     {
+        static Random random = new Random();
         public static bool ifPlayerDodgeSuccess = false;  
-        public static bool isEnemyDodgeSuccess = false;
+        public static bool ifEnemyDodgeSuccess = false;
         public static void ExecuteEnemyAction(Character player, Character enemy)
         {
-            if (ifPlayerDodgeSuccess == false)
+            var enemyAction = random.Next(1, 6);
+            switch (enemyAction)
             {
-                Console.WriteLine($"\n- {enemy.Name} kontratakuje!");
-                int damage = Math.Max(0, enemy.Attack - player.Defense);
-                player.Hp -= damage;
-                Console.WriteLine($"- {player.Name} otrzymuje {damage} obrażeń.");
+                case 1:
+                    if (ifPlayerDodgeSuccess == false)
+                    {
+                        SwordCut.Execute(enemy, player);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"- {enemy.Name} chybił atak");
+                        ifPlayerDodgeSuccess = false;
+                    }
+                    break;
+                case 2:
+                    if (ifPlayerDodgeSuccess == true)
+                    {
+                        SpecialAttack.Execute(enemy, player);
+                    }
+                    else
+                    {
+                        Console.WriteLine($"- {enemy.Name} chybił atak");
+                        ifPlayerDodgeSuccess = false;
+                    }
+                    break;
+                case 3:
+                    ifEnemyDodgeSuccess = DodgeAttack.Execute(enemy, player);
+                    break;
+                case 4:
+                    DefensiveStance.Execute(enemy, player);
+                    break;
+                case 5:
+                    HealthPotion.Execute(enemy, player);
+                    break;
             }
-            else
-            {
-               Console.WriteLine($"- {enemy.Name} chybił atak");
-                ifPlayerDodgeSuccess = false;
-            }
-            
         }
         public static void ExecutePlayerAction(Character player, Character enemy)
         {
@@ -34,25 +57,25 @@ namespace Project_Tylda
             switch (playerAction)
             {
                 case "1":
-                    if (isEnemyDodgeSuccess == true)
+                    if (ifEnemyDodgeSuccess == false)
                     {
                         SwordCut.Execute(player, enemy);
                     }
                     else
                     {
                         Console.WriteLine($"- {player.Name} chybił atak");
-                        isEnemyDodgeSuccess = false;
+                        ifEnemyDodgeSuccess = false;
                     }
                     break;
                 case "2":
-                    if (isEnemyDodgeSuccess == true)
+                    if (ifEnemyDodgeSuccess == true)
                     {
                         SpecialAttack.Execute(player, enemy);
                     }
                     else
                     {
                         Console.WriteLine($"- {player.Name} chybił atak");
-                        isEnemyDodgeSuccess = false;
+                        ifEnemyDodgeSuccess = false;
                     }
                     break;
                 case "3":
@@ -69,8 +92,11 @@ namespace Project_Tylda
         }
         public static void ResetDefense(Character baseCharacter, Character characterInAction)
         {
-            characterInAction.Defense = baseCharacter.Defense;
-            Console.WriteLine($"przywrócono bazowy poziom pkt oborny ({characterInAction.Defense})");
+            if (characterInAction.Defense != baseCharacter.Defense)
+            {
+                characterInAction.Defense = baseCharacter.Defense;
+                Console.WriteLine($"przywrócono bazowy poziom pkt oborny ({characterInAction.Defense})");
+            }
         }
     }
 }
